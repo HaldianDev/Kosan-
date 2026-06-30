@@ -1,10 +1,23 @@
 {
     "version": 2,
-    "framework": "laravel",
+    "framework": null,
     "builds": [
         {
             "src": "public/index.php",
-            "use": "vercel-php@0.7.2"
+            "use": "vercel-php@0.7.2",
+            "config": {
+                "maxExecutionTime": 30,
+                "includeFiles": [
+                    "app/Filament/**",
+                    "app/Providers/**",
+                    "bootstrap/**",
+                    "config/**",
+                    "routes/**",
+                    "vendor/**",
+                    "app/**",
+                    "resources/views/**"
+                ]
+            }
         },
         {
             "src": "public/**",
@@ -13,12 +26,12 @@
     ],
     "routes": [
         {
-            "src": "/_vercel/insights/(.*)",
-            "dest": "/_vercel/insights/$1"
-        },
-        {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(css|js|images|fonts|favicon.ico|favicon.png)(.*)",
+            "dest": "/public/$1$2"
         },
         {
             "src": "/(.*)",
