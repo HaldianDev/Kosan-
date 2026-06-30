@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "framework": null,
+    "framework": "laravel",
     "builds": [
         {
             "src": "public/index.php",
