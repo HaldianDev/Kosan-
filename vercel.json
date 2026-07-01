@@ -21,7 +21,8 @@
                     "routes/**",
                     "vendor/**",
                     "app/**",
-                    "resources/views/**"
+                    "resources/views/**",
+                    "storage/**"
                 ]
             }
         },
